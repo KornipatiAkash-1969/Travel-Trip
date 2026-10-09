@@ -1,0 +1,109 @@
+.container {
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+.my-trips-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 32px 0;
+}
+
+.my-trips-heading {
+  font-size: 32px;
+  color: #334155;
+  margin-bottom: 32px;
+}
+
+.no-trips-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.no-trips-image {
+  width: 350px;
+  max-width: 100%;
+}
+
+.no-trips-heading {
+  font-size: 28px;
+  color: #334155;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.no-trips-description {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 450px;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.book-trip-button {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 24px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.trips-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.trip-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.trip-details {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.trip-location {
+  font-size: 24px;
+  color: #1e293b;
+  margin: 0;
+}
+
+.trip-date-label {
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+}
+
+.trip-date {
+  font-size: 16px;
+  color: #334155;
+  margin: 4px 0 0;
+}
+
+.cancel-button {
+  background-color: transparent;
+  border: 1px solid #dc2626;
+  color: #dc2626;
+  border-radius: 6px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.cancel-button:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+}

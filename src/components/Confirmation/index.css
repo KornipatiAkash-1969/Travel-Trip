@@ -1,0 +1,138 @@
+.form-container {
+  flex: 1;
+  padding: 32px;
+}
+
+.form-heading {
+  color: #1e293b;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-description {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+.form-card {
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  border: 1px solid #d7dfe9;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.info-row:last-of-type {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #334155;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.previous-button,
+.next-button {
+  flex: 1;
+  height: 44px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.previous-button {
+  background-color: #e2e8f0;
+  color: #334155;
+}
+
+.next-button {
+  background-color: #304766;
+  color: #ffffff;
+}
+
+.previous-button:hover,
+.next-button:hover {
+  opacity: 0.9;
+}
+
+.success-card {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  border: 1px solid #d7dfe9;
+  border-radius: 12px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.success-icon {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+.success-heading {
+  color: #1e293b;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.success-description {
+  color: #64748b;
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+@media screen and (max-width: 768px) {
+  .form-container {
+    padding: 16px;
+  }
+
+  .form-heading {
+    font-size: 24px;
+  }
+
+  .form-description {
+    font-size: 14px;
+  }
+
+  .form-card,
+  .success-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+  }
+
+  .success-heading {
+    font-size: 24px;
+  }
+}

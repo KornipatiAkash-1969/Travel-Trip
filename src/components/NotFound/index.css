@@ -1,0 +1,27 @@
+.not-found-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+}
+
+.not-found-img {
+  width: 300px;
+  max-width: 100%;
+}
+
+.not-found-heading {
+  font-size: 32px;
+  color: #334155;
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.not-found-description {
+  font-size: 16px;
+  color: #64748b;
+  margin: 0;
+}

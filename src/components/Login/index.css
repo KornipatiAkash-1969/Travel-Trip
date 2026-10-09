@@ -1,0 +1,159 @@
+.bg-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  width: 485px;
+  height: 472px;
+  opacity: 1;
+  top: 148px;
+  left: 441px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0px 20px 25px 0px #0f172a1a;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.travel-trip-heading {
+  color: #334155;
+  font-family: Caveat;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 44px;
+  letter-spacing: 0.1px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.login-form {
+  min-height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.input-label {
+  width: 70px;
+  height: 20px;
+  top: 334.5px;
+  left: 507px;
+  opacity: 1;
+  font-family: Inter;
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0.2px;
+  color: #334155;
+}
+
+.input {
+  width: 352px;
+  height: 38px;
+  top: 362.5px;
+  left: 507px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  gap: 24px;
+  opacity: 1;
+  border: 1px solid #64748b;
+  margin-bottom: 15px;
+  outline: 0px;
+  background-color: #ffffff !important;
+}
+
+.password-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 352px;
+  height: 38px;
+  top: 362.5px;
+  left: 507px;
+  border-radius: 8px;
+  border-width: 1px;
+  padding-top: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-left: 12px;
+  gap: 24px;
+  opacity: 1;
+  border: 1px solid #64748b;
+  background-color: #ffffff !important;
+}
+
+.input-password {
+  height: 100%;
+  width: 90%;
+  border: 0px;
+  outline: 0px;
+  background-color: #ffffff !important;
+}
+
+.login-button {
+  width: 352px;
+  height: 44px;
+  top: 522.5px;
+  left: 507px;
+  border-radius: 8px;
+  padding-top: 12px;
+  padding-right: 24px;
+  padding-bottom: 12px;
+  padding-left: 24px;
+  gap: 8px;
+  opacity: 1;
+  background-color: #304766;
+  color: #ffffff;
+  border: 0px;
+  margin-top: 20px;
+}
+
+.icon-button {
+  background-color: transparent;
+  border: 0px;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  color: #334155;
+}
+
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus,
+.input-password:-webkit-autofill,
+.input-password:-webkit-autofill:hover,
+.input-password:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px #ffffff inset !important;
+  -webkit-text-fill-color: #000000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.error-message {
+  width: 216;
+  height: 18;
+  top: 462px;
+  left: 507px;
+  opacity: 1;
+  font-family: DM Sans;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0.2px;
+  vertical-align: middle;
+  color: #ef4444;
+}
