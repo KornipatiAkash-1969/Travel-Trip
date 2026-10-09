@@ -9,7 +9,7 @@ This is an individual assessment. All work must be your own. You can request for
 #### UI Prerequisites
 
 <details>
-<summary>Click to view</summary>
+<summary>Clickto view</summary>
 
 - What is Figma?
   - Figma is a vector graphics editor and prototyping tool which is primarily web-based. You can check more info on the <a href="https://www.figma.com/" target="_blank">website</a>
