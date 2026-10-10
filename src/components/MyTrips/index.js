@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom'
 
 import Header from '../Header'
+import noTripsImage from './no-trips-img.svg'
 
 import './index.css'
 
@@ -23,11 +24,7 @@ const MyTrips = props => {
 
         {tripsList.length === 0 ? (
           <div className="no-trips-container">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/travel-no-trips-img.png"
-              alt="no trips"
-              className="no-trips-image"
-            />
+            <img src={noTripsImage} alt="no trips" className="no-trips-image" />
 
             <h1 className="no-trips-heading">No upcoming trips</h1>
 

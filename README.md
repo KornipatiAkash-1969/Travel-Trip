@@ -1,271 +1,275 @@
-In this project let's build a **Travel Trip** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.
+# 🌍 Travel Trip Web Application
 
-You will demonstrate your skills by creating an app that will fetch data from an internal server using a component, routing concepts, authentication and authorization, and adding responsiveness to the website.
+A modern, responsive multi-step travel booking web application built with **React.js**, **React Router v5**, and **js-cookie**. The application provides secure token-based authentication, a 5-step booking wizard with real-time field validation, persistent trip management, and responsive layouts across desktop, tablet, and mobile devices.
 
-This is an individual assessment. All work must be your own. You can request for the feedback after your project submission in the discussions.
+---
 
-### Prerequisites
+## 🔑 Login Credentials (Demo Access)
 
-#### UI Prerequisites
+Use the following credentials to access the application:
 
-<details>
-<summary>Clickto view</summary>
+| Field | Value | Description |
+| :--- | :--- | :--- |
+| **Username** | `rahul` | Registered user account |
+| **Password** | `rahul@2021` | Registered user password |
+| **Authentication API** | `https://apis.ccbp.in/login` | Method: `POST` with JSON body |
+| **Cookie Name** | `jwt_token` | Stores JWT session token via `js-cookie` (valid 30 days) |
 
-- What is Figma?
-  - Figma is a vector graphics editor and prototyping tool which is primarily web-based. You can check more info on the <a href="https://www.figma.com/" target="_blank">website</a>
-- Create a Free account in Figma.
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=hrHL2VLMl7g&t=37s" target="_blank">this</a> video to create a free Figma account. Watch the video upto **00:50**
-- How to Check CSS in Figma?
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=B242nuM3y2s" target="_blank">this</a> video to check CSS in a Figma screen. Watch the video upto **02:45**.
-- Export Images in Figma screen
+> [!TIP]
+> You can click the eye icon in the password field (`data-testid="show-password"`) to toggle between masked (`●●●●●●`) and visible plain text.
 
-  - Kindly follow the instructions as shown in <a href="https://www.youtube.com/watch?v=NpzL1MONwaw" target="_blank">this</a> video to export images from a Figma screen.
-  - Click on the Export button to get Export options as shown in the below image.
+---
 
-  <div style="text-align:center;margin:10px 0px 0px 45px;width:200px;">
-    <img src="https://assets.ccbp.in/frontend/react-js/figma-export-option.png" />
-  </div>
+## 🚀 How to Run the Application
 
-- Upload your exported images from Figma to Cloudinary and get image URLs from Cloudinary. Refer <a href="https://www.figma.com/file/XoGFET0MdppCNgH6RhvcQe/Mini-Project---Travel-Trip?type=design&node-id=0-3523&mode=design&t=S89jMW84CTwn2Mkc-11" target="_blank">this</a> session for better understanding.
+### 📋 Prerequisites
+- **Node.js**: v14.x or higher (compatible with Node 14, 16, 18, 20, 22, and 24+)
+- **npm**: v6.x or higher
+- **Git**: Installed on your system
 
-</details>
+---
 
-#### Design Files
-
-<details>
-<summary>Click to view</summary>
-
-- You can check the **Design Files** for different devices <a href="https://www.figma.com/file/XoGFET0MdppCNgH6RhvcQe/Mini-Project---Travel-Trip?type=design&node-id=0-3523&mode=design&t=S89jMW84CTwn2Mkc-11" target="_blank">here</a>.
-
-</details>
-
-### Set Up Instructions
-
-<details>
-<summary>Click to view</summary>
-
-- Download dependencies by running `npm install`
-- Start up the app using `npm start`
-</details>
-
-### Completion Instructions
-
-<details>
-<summary>Functionality to be added</summary>
-<br/>
-The app must have the following functionalities
-
-- **Login Route**
-
-  - When an invalid credentials are provided and the **Login** button is clicked, then the respective error message received from the response should be displayed
-  - When a valid credentials are provided and the **Login** button is clicked, then the page should be navigated to the Home Route
-  - When an _unauthenticated_ user tries to access the Home Route, Book A New Trip Route and My Trips Route, then the page should be navigated to Login Route
-  - When an _authenticated_ user tries to access the Home Route, Book A New Trip Route and My Trips Route, then the page should be navigated to the respective route
-  - When an _authenticated_ user tries to access the Login Route, then the page should be navigated to the Home Route
-  - When the **Show Password** eye icon is clicked, then the password should be shown
-  - When the **Show Password** eye icon is clicked again, then the password should be masked
-
-- **Home Route**
-
-  - When an _authenticated_ user opens the Home Route
-    - Clicks on the **Book A New Trip** button, then the page should be navigated to the Book A New Trip Route
-
-- **Book A New Trip Route**
-
-  - When the Book A New Trip Route is opened, the user should be able to see a **Your Details** form with inputs **Name**, **Start Location**, **End Location** and **Next** button.
-    - **Your Details** step should be displayed as an active step as shown in the Figma.
-      - The user should be able to click the **Next** button. When clicked, the user should see
-        - The error message `Enter your name`, if the **Name** input is empty.
-        - The error message `Enter your start location`, if the **Start Location** input is empty.
-        - The error message `Enter your end location`, if the **End Location** input is empty.
-        - The **Date Selection** form should be displayed if the valid values are provided.
-    - **Your Details** step should be displayed as a completed step and **Date Selection** should be displayed as an active step as shown in the figma.
-    - In the **Date Selection** form, the user should be able to see a form with inputs **Start Date** and **End Date**.
-    - The user should be able to click the **Previous** button. When clicked, the user should see the Your Details Form and input values should be persisted and the user should be able to update the input values and submit them again.
-    - The user should be able to click the **Next** button. When clicked, the user should see
-      - The error message `Select start date`, if the **Start Date** input is empty.
-      - The error message `Select end date`, if the **End Date** input is empty.
-      - The error message `The end date cannot be less than the start date`, if the **End Date** input value is less than the **Start Date** input value.
-      - The **Guests** form should be displayed if the valid values are provided.
-    - **Your Details** and **Date Selection** steps should be displayed as completed steps.
-    - In the **Guests** section, the user should be able to see a section with **Adults**, **Children** and **Infants**.
-    - **Guests** should be displayed as an active step as shown in the figma.
-    - The user should be able to see
-      - By default, Adults are set to one (Considering the user) and can be increased, but cannot be decreased to a value less than one.
-      - By default, Children are set to zero and can be increased, but cannot be decreased to a value less than zero.
-      - By default, Infants are set to zero and can be increased, but cannot be decreased to a value less than zero.
-    - The user should be able to click the **Previous** button. When clicked, the user should see the Date Selection form and input values should be persisted and the user should be able to update the input values and submit them again.
-    - The user should be able to click the **Next** button. When clicked, the user should see the **Travel Assistance** form.
-    - In the **Travel Assistance** form, the user should be able to see a form with Travel assistance needed input.
-    - **Your Details, Date Selection** and **Guests** steps should be displayed as completed steps.
-    - **Travel Assistance** should be displayed as an active step as shown in figma.
-    - The user should be able to check the Travel Assistance Needed checkbox. When checked, the user should see Travel Assistance should be displayed, and able to select an option.
-    - The user should be able to click the **Previous** button. When clicked, the user should see the Guests and count should be persisted and the user should be able to update the counts.
-    - The user should be able to click the **Next** button. When clicked, the user should see the **Confirmation** form.
-    - In the **Confirmation** form, the user should be able to see all the steps details.
-    - **Your Details, Date Selection, Guests** and **Travel Assistance** steps should be displayed as completed steps.
-    - **Confirmation** should be displayed as an active step as shown in the figma.
-    - The user should be able to click the **Cancel** button. When clicked, the user should see the **Your Details** form with empty input values.
-    - The user should be able to click the **Confirm** button. When clicked, the user should see the Confirmed message and **Book New Trip** button to book a new trip.
-
-- **My Trips Route**
-
-  - When the **My Trips** route is opened,
-    - The users should be able to see the Trips details in the cards as shown in the figma.
-    - If there is no trips created, then the No trips screen should be displayed as shown in the figma.
-
-- **Header**
-
-  - When the **website logo** text is clicked, then the page should be navigated to the Home Route
-  - When the **Home** link is clicked, then the page should be navigated to the Home Route
-  - When the **My Trips** link is clicked, then the page should be navigated to the My Trips Route
-  - When the **Logout** button is clicked, then the page should be navigated to the Login Route
-
-- Users should be able to view the website responsively in mobile view, tablet view as well
-
-</details>
-
-<details>
-<summary>API Requests & Responses</summary>
-<br/>
-
-**loginApiUrl**
-
-#### API: `https://apis.ccbp.in/login`
-
-#### Method: `POST`
-
-#### Request:
-
-```json
-{
-  "username": "rahul",
-  "password": "rahul@2021"
-}
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/KornipatiAkash-1969/Travel-Trip.git
+cd Travel-Trip
 ```
 
-#### Description:
-
-Returns a response based on the credentials provided
-
-#### Sample Success Response
-
-```json
-{
-  "jwt_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9. nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y"
-}
+### Step 2: Install Dependencies
+```bash
+npm install --legacy-peer-deps
 ```
 
-#### Sample Failure Response
+### Step 3: Start the Development Server
 
-```json
-{
-  "status_code": 404,
-  "error_msg": "Username is not found"
-}
+#### Option A: Windows PowerShell (Node.js 17+)
+```powershell
+$env:NODE_OPTIONS="--openssl-legacy-provider"
+npm start
 ```
 
-</details>
+#### Option B: macOS / Linux / Git Bash (Node.js 17+)
+```bash
+NODE_OPTIONS="--openssl-legacy-provider" npm start
+```
 
-### Important Note
+#### Option C: Node.js 14 or 16
+```bash
+npm start
+```
 
-<details>
-<summary>Click to view</summary>
+Once started, open your browser and navigate to:
+👉 **`http://localhost:3000`**
 
-<br/>
+---
 
-**The following instructions are required for the tests to pass**
+### Step 4: Build for Production
+To generate a production-ready optimized build:
 
-- **Note:**
+```bash
+# Windows PowerShell
+$env:NODE_OPTIONS="--openssl-legacy-provider"
+npm run build
 
-  - For Mini Projects, You have to use HTML elements to style the React Components. Usage of `styled-components` (CSS in JS) to style React components are not supported in Mini Projects. Test cases won't be passed, if you use styled components.
-  - Refer to the below Example for the usage of `data-testid` in the HTML elements
-    - Example: `<div data-testid="questionItem" className="question-item"/>`
+# macOS / Linux / Git Bash
+NODE_OPTIONS="--openssl-legacy-provider" npm run build
+```
 
-- **Routes**
+---
 
-  - `Home` Route should consist of `/` in the URL path
-  - `My Trips` Route should consist of `/my-trips` in the URL path
-  - `Book A New Trip` Route should consist of `/book-a-new-trip` in the URL path
+### Step 5: Formatting and Linting
+```bash
+npm run format     # Format all files using Prettier
+npm run lint       # Run ESLint to verify code quality
+npm run lint:fix   # Auto-fix linting errors
+```
 
-  - **Header**
+---
 
-    - The Travel Trip Logo text in Header should consist of font-family value as `Caveat`
+## 📊 Flowcharts & How It Works
 
-- **Login Route**
+### 1. Overall Application Navigation Flowchart
 
-  - The Travel Trip Logo text should consist of of font-family value as `Caveat`.
-  - The HTML button element with show password eye icon should have the `data-testid` attribute value as **show-password** to it
+```mermaid
+flowchart TD
+    Start(["User Opens Application"]) --> CheckAuth{"Is jwt_token present in Cookie?"}
 
-- **Book A New Trip Route**
+    CheckAuth -- No --> LoginPage["Login Page (/login)"]
+    CheckAuth -- Yes --> HomePage["Home Page (/)"]
 
-  - The successfully completed image which displayed before the step should have the alt as the value of the key `displayText` from the initial steps list provided.
-  - The successfully completed image which displayed in the confirmed message should have the alt as **success**.
+    LoginPage --> EnterCreds["Enter Username and Password"]
+    EnterCreds --> SubmitLogin["Submit Form (POST /login)"]
 
-- **Not Found Route**
-  - The Not Found image should consist of alt attribute value as `not found`
-- **Kindly follow the screens as shown in figma**
+    SubmitLogin --> AuthCheck{"Valid Credentials?"}
+    AuthCheck -- No --> ShowError["Highlight Empty/Invalid Fields with Error Message"]
+    ShowError --> EnterCreds
+    AuthCheck -- Yes --> SaveCookie["Store jwt_token in Cookie"] --> HomePage
 
-</details>
+    HomePage --> NavChoice{"User Action"}
+    NavChoice -- Click 'Book a new trip' --> BookTripRoute["Book A New Trip (/book-a-new-trip)"]
+    NavChoice -- Click 'My Trips' --> MyTripsRoute["My Trips (/my-trips)"]
+    NavChoice -- Click 'Logout' --> LogoutAction["Delete Cookie & Redirect to /login"]
 
-### Resources
+    BookTripRoute --> CompleteBooking["Complete 5-Step Wizard"]
+    CompleteBooking --> TripAdded["Trip Saved to tripsList State"]
+    TripAdded --> MyTripsRoute
+```
 
-<details>
-<summary>Image URLs</summary>
+---
 
-[https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png](https://assets.ccbp.in/frontend/react-js/travel-trip-steps-successfully-completed-img.png)
+### 2. Multi-Step Trip Booking Wizard Flowchart
 
-</details>
+```mermaid
+flowchart TD
+    subgraph Wizard ["5-Stage Booking Wizard (/book-a-new-trip)"]
+        S1["Step 1: Your Details"]
+        S2["Step 2: Date Selection"]
+        S3["Step 3: Guests Counter"]
+        S4["Step 4: Travel Assistance"]
+        S5["Step 5: Confirmation Summary"]
+    end
 
-<details>
-<summary>Colors</summary>
+    S1 --> V1{"Validate: Name, Start Location, End Location"}
+    V1 -- Missing Fields --> E1["Display field error: Enter your name/location"]
+    V1 -- Valid --> S2
 
-<br/>
+    S2 --> V2{"Validate: Dates & End Date >= Start Date"}
+    V2 -- Invalid Dates --> E2["Display date validation error"]
+    V2 -- Valid --> S3
+    S2 -- Click Previous --> S1
 
-**Background Colors**:
+    S3 --> V3["Configure Guests: Adults min 1, Children, Infants"]
+    V3 --> S4
+    S3 -- Click Previous --> S2
 
-<div style="background-color: #3b82f6; width: 150px; padding: 10px; color: white">Hex: #3b82f6</div>
-<div style="background-color: #304766; width: 150px; padding: 10px; color: white">Hex: #304766</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: white">Hex: #ffffff</div>
-<div style="background-color: #2563eb; width: 150px; padding: 10px; color: white">Hex: #2563eb</div>
-<div style="background-color: #dbeafe; width: 150px; padding: 10px; color: white">Hex: #dbeafe</div>
+    S4 --> V4["Select Travel Assistance (Car, Flight, Bus, Train)"]
+    V4 --> S5
+    S4 -- Click Previous --> S3
 
-<br/>
+    S5 --> Choice{"Confirm or Cancel?"}
+    Choice -- Cancel --> ResetForm["Clear form data and return to Step 1"] --> S1
+    Choice -- Confirm --> SuccessState["Awesome! Booking Confirmed Banner"]
 
-**Text Colors**:
+    SuccessState --> BookAnother["Option: Click 'Book a New Trip'"]
+    BookAnother --> S1
+```
 
-<div style="background-color: #334155; width: 150px; padding: 10px; color: black">Hex: #334155</div>
-<div style="background-color: #2563eb; width: 150px; padding: 10px; color: black">Hex: #2563eb</div>
-<div style="background-color: #1e293b; width: 150px; padding: 10px; color: black">Hex: #1e293b</div>
-<div style="background-color: #ffffff; width: 150px; padding: 10px; color: white">Hex: #ffffff</div>
-<div style="background-color: #64748b; width: 150px; padding: 10px; color: white">Hex: #64748b</div>
-<div style="background-color: #f1f5f9; width: 150px; padding: 10px; color: white">Hex: #f1f5f9</div>
-<div style="background-color: #475569; width: 150px; padding: 10px; color: white">Hex: #475569</div>
-<br/>
+---
 
-**Border Colors**
+### 3. My Trips & Booking Management Flowchart
 
-<div style="background-color: #cbd5e1; width: 150px; padding: 10px; color: black">Hex: #cbd5e1</div>
-<div style="background-color: #e2e8f0; width: 150px; padding: 10px; color: black">Hex: #e2e8f0</div>
+```mermaid
+flowchart LR
+    OpenMyTrips["Open My Trips (/my-trips)"] --> CheckTrips{"Any trips booked in tripsList?"}
 
-</details>
+    CheckTrips -- tripsList is Empty --> EmptyState["Render Empty View"]
+    EmptyState --> ShowSVG["Display Travel Suitcase SVG & 'No upcoming trips'"]
+    ShowSVG --> CTA["Click 'Book a new trip' Button"] --> GoBooking["Navigate to /book-a-new-trip"]
 
-<details>
-<summary>Font-families</summary>
+    CheckTrips -- tripsList has Trips --> RenderCards["Render Booked Trip Cards"]
+    RenderCards --> CardDetails["Card displays Destination, Date Range"]
+    CardDetails --> CancelTrip["Click 'Cancel' Button"]
+    CancelTrip --> FilterTrip["Filter trip out by ID and update tripsList state"]
+    FilterTrip --> CheckTrips
+```
 
-- Caveat
-- Roboto
+---
 
-</details>
+## 🛠️ Detailed Component Breakdown
 
-### Project Submission Instructions
+### 1. Authentication & Route Guard (`/login` & `ProtectedRoute`)
+- **Login Component (`src/components/Login`)**:
+  - Controlled inputs for `Username` and `Password`.
+  - **Empty Input Feedback**: Inputs left empty on submission or with bad credentials highlight with red borders (`.input-error`) and pink background tints.
+  - **Password Visibility**: Toggles between text and password masks using `FaRegEye` / `FaRegEyeSlash`.
+  - Submits to `https://apis.ccbp.in/login`.
+  - On 200 response, stores `jwt_token` with 30-day expiration and redirects to `/`.
+- **Protected Route Guard (`src/components/ProtectedRoute`)**:
+  - Intercepts route transitions.
+  - If `jwt_token` cookie is absent, prevents access and redirects to `/login`.
+  - If authenticated, redirects `/login` visits to `/`.
 
-- For Mini Projects, you can submit the test cases at your own pace. But we suggest you to submit the code to know the percentage of completion through test cases and that score will be considered for your interviews.
+### 2. Home Page (`/`)
+- Hero banner with headline: *"Travel. Relax. Memories."*
+- Descriptive tagline and call-to-action button: **"Book a new trip"** (`/book-a-new-trip`).
+- Responsive layout adapting from side-by-side desktop view to column-reverse mobile view.
 
-- Also it's important to publish your code frequently using `Step - 4` in the Instructions tab.
+### 3. 5-Step Booking Wizard (`/book-a-new-trip`)
+- **Interactive Step Indicator**:
+  - Numbered circles (`1` to `5`) indicating progress.
+  - Completed steps show a green checkmark icon.
+  - Current step is highlighted in active blue.
+  - On mobile devices (`<= 768px`), automatically adapts into a horizontal scrollable stepper.
+- **Step 1: Your Details**:
+  - Fields: `Name`, `Start Location`, `End Location`.
+  - Validates that non-empty values are provided before proceeding.
+- **Step 2: Date Selection**:
+  - Fields: `Start Date`, `End Date`.
+  - Validates that dates are selected and that `End Date` is not earlier than `Start Date`.
+- **Step 3: Guests**:
+  - Increment/decrement counter controls.
+  - `Adults`: Minimum 1 (the user). Cannot decrease below 1.
+  - `Children`: Minimum 0.
+  - `Infants`: Minimum 0.
+- **Step 4: Travel Assistance**:
+  - Toggle checkbox for travel assistance.
+  - When checked, dropdown options appear: **Car**, **Flight**, **Bus**, **Train**.
+- **Step 5: Confirmation & Success**:
+  - Full summary review of name, location, dates, total guests, and assistance selection.
+  - **Cancel**: Clears all inputs and resets wizard to Step 1.
+  - **Confirm**: Saves trip with unique timestamp ID and transitions to the *Awesome! Booking Confirmed* success banner.
 
-> ### _Things to Keep in Mind_
->
-> - All components you implement should go in the `src/components` directory.
-> - **Do not remove the pre-filled code**
-> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.
+### 4. My Trips Page (`/my-trips`)
+- **Empty State**: When no trips exist, displays a custom vector travel illustration, friendly explanation, and **"Book a new trip"** CTA.
+- **Active Trips**: Renders cards displaying destination, date range, and a **Cancel** button to remove the trip.
+
+### 5. Header Navigation
+- Brand logo styled with cursive `Caveat` font.
+- Navigation links to `Home` and `My Trips`.
+- **Logout** button: Clears session cookie and redirects to `/login`.
+
+---
+
+## 📁 Project Directory Structure
+
+```
+Travel-Trip/
+├── public/
+│   ├── images/
+│   │   └── no-trips-img.svg       # Custom vector empty-state illustration
+│   ├── img/
+│   │   └── favicon.ico
+│   ├── index.html
+│   └── manifest.json
+├── src/
+│   ├── components/
+│   │   ├── BookTrip/              # Multi-step coordinator & progress indicator
+│   │   ├── Confirmation/          # Step 5: Summary review & success confirmation
+│   │   ├── DateSelection/         # Step 2: Date picker with range validation
+│   │   ├── Guests/                # Step 3: Adults, children, & infants counters
+│   │   ├── Header/                # Top navigation bar with logout
+│   │   ├── Home/                  # Landing page with book trip call-to-action
+│   │   ├── Login/                 # Authentication, error handling, empty input styling
+│   │   ├── MyTrips/               # Booked trips list, cancellation, & empty state SVG
+│   │   ├── NotFound/              # 404 fallback page
+│   │   ├── ProtectedRoute/        # Authentication route guard
+│   │   ├── TravelAssistance/      # Step 4: Travel assistance selection
+│   │   └── YourDetails/           # Step 1: User name & location input form
+│   ├── App.css
+│   ├── App.js                     # Routes configuration & top-level tripsList state
+│   ├── index.css
+│   └── index.js                   # Application root entry point
+├── package.json
+└── README.md
+```
+
+---
+
+## 🧰 Tech Stack
+
+- **Core Library:** [React 17](https://reactjs.org/)
+- **Routing:** [React Router DOM v5](https://v5.reactrouter.com/)
+- **Cookie Management:** [js-cookie](https://github.com/js-cookie/js-cookie)
+- **Icons:** [React Icons](https://react-icons.github.io/react-icons/) (`FaRegEye`, `FaRegEyeSlash`, etc.)
+- **Styling:** CSS3 with Flexbox, CSS Grid, and custom Responsive Media Queries
+- **Quality & Formatting:** ESLint & Prettier

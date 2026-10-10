@@ -12,6 +12,7 @@ const Login = props => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [passwordVisible, setPasswordVisible] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
   const [errorDetails, setErrorDetails] = useState({
     showErrorMsg: false,
     errorMsg: '',
@@ -19,10 +20,16 @@ const Login = props => {
 
   const onChangeUsername = event => {
     setUsername(event.target.value)
+    if (errorDetails.showErrorMsg) {
+      setErrorDetails({showErrorMsg: false, errorMsg: ''})
+    }
   }
 
   const onChangePassword = event => {
     setPassword(event.target.value)
+    if (errorDetails.showErrorMsg) {
+      setErrorDetails({showErrorMsg: false, errorMsg: ''})
+    }
   }
 
   const onTogglePassword = () => {
@@ -54,6 +61,7 @@ const Login = props => {
 
   const onSubmitLoginForm = async event => {
     event.preventDefault()
+    setIsSubmitted(true)
     const userDetails = {
       username,
       password,
@@ -82,6 +90,11 @@ const Login = props => {
   const showPasswordIcon = <FaRegEye className="icon" />
   const hidePasswordIcon = <FaRegEyeSlash className="icon" />
 
+  const isUsernameError =
+    (isSubmitted && username.trim() === '') || errorDetails.showErrorMsg
+  const isPasswordError =
+    (isSubmitted && password.trim() === '') || errorDetails.showErrorMsg
+
   const token = Cookies.get('jwt_token')
 
   if (token !== undefined) {
@@ -99,14 +112,18 @@ const Login = props => {
             id="username"
             type="text"
             placeholder="Username"
-            className="input"
+            className={`input ${isUsernameError ? 'input-error' : ''}`}
             onChange={onChangeUsername}
             value={username}
           />
           <label htmlFor="password" className="input-label">
             Password
           </label>
-          <div className="password-container">
+          <div
+            className={`password-container ${
+              isPasswordError ? 'input-error' : ''
+            }`}
+          >
             <input
               id="password"
               type={passwordVisible ? 'text' : 'password'}

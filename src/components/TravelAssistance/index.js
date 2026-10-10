@@ -1,8 +1,12 @@
 import './index.css'
 
 const TravelAssistance = props => {
-  const {setCurrentStep, tripDetails, setTripDetails, travelAssistanceList} =
-    props
+  const {
+    setCurrentStep,
+    tripDetails,
+    setTripDetails,
+    travelAssistanceList,
+  } = props
 
   const {travelAssistanceNeeded, travelOption} = tripDetails
 

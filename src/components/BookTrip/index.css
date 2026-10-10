@@ -7,15 +7,20 @@
   display: flex;
   padding: 30px;
   gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .steps-container {
   width: 280px;
+  min-width: 240px;
   background-color: #ffffff;
   border-radius: 12px;
   padding: 24px;
   border: 1px solid #d7dfe9;
   height: fit-content;
+  box-sizing: border-box;
 }
 
 .steps-list {
@@ -30,6 +35,10 @@
   margin-bottom: 24px;
 }
 
+.step-item:last-child {
+  margin-bottom: 0;
+}
+
 .step-number {
   width: 36px;
   height: 36px;
@@ -41,6 +50,7 @@
   color: #64748b;
   font-weight: 600;
   margin-right: 12px;
+  flex-shrink: 0;
 }
 
 .active-step {
@@ -53,6 +63,7 @@
   width: 36px;
   height: 36px;
   margin-right: 12px;
+  flex-shrink: 0;
 }
 
 .step-text {
@@ -70,13 +81,42 @@
   .booktrip-container {
     flex-direction: column;
     padding: 16px;
+    gap: 16px;
   }
 
   .steps-container {
     width: 100%;
+    padding: 16px;
+  }
+
+  .steps-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 4px;
   }
 
   .step-item {
-    margin-bottom: 16px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 0;
+    min-width: 52px;
+  }
+
+  .step-number,
+  .completed-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 0;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+
+  .step-text {
+    font-size: 11px;
+    white-space: nowrap;
   }
 }
